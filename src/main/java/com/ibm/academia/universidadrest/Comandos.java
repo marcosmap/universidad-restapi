@@ -21,6 +21,8 @@ public class Comandos implements CommandLineRunner {
     private PabellonDAO pabellonDAO;
     @Autowired
     private CarreraDao carreraDao;
+    @Autowired
+    private ProfesorDAO profesorDAO;
 
     @Override
     public void run(String... args) throws Exception {
@@ -34,7 +36,7 @@ public class Comandos implements CommandLineRunner {
         /*Pabellon pabellon1 = new Pabellon(null, 75.0, "Pabellon 2", new Direccion("calle 1", "numero 1", "12345", "depto 2", "piso 2", "Ciudad de Mexico"));
         System.out.println(pabellonDAO.guardar(pabellon1).toString());*/
 
-        //Profesor profesor1 = new Profesor(null, "Marcos", "Arreguin", "DNI1", new Direccion("calle 1", "1", "54943", "depto 1", "piso 2", "Ciudad de México"), new BigDecimal(25000));
-        //System.out.println(profesorDAO.guardar(profesor1).toString());
+        /* Profesor profesor1 = new Profesor(null, "Marcos", "Arreguin", "DNI1", new Direccion("calle 1", "1", "54943", "depto 1", "piso 2", "Ciudad de México"), new BigDecimal(25000));
+        System.out.println(profesorDAO.guardar(profesor1).toString()); */
     }
 }

@@ -4,5 +4,5 @@ import com.ibm.academia.universidadrest.entities.Persona;
 import com.ibm.academia.universidadrest.entities.Profesor;
 
 public interface ProfesorDAO extends PersonaDAO {
-    public Iterable<Persona> buscaProfesoresPorCarrera(String carrera);
+    // public Iterable<Persona> buscaProfesoresPorCarrera(String carrera);
 }
