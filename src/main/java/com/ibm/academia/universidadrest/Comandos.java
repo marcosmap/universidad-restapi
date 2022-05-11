@@ -1,39 +1,40 @@
 package com.ibm.academia.universidadrest;
 
-import com.ibm.academia.universidadrest.entities.Alumno;
-import com.ibm.academia.universidadrest.entities.Carrera;
-import com.ibm.academia.universidadrest.entities.Direccion;
-import com.ibm.academia.universidadrest.entities.Persona;
-import com.ibm.academia.universidadrest.services.AlumnoDAO;
-import com.ibm.academia.universidadrest.services.CarreraDAOImpl;
-import com.ibm.academia.universidadrest.services.CarreraDao;
+import com.ibm.academia.universidadrest.entities.*;
+import com.ibm.academia.universidadrest.enums.Pizarron;
+import com.ibm.academia.universidadrest.enums.TipoEmpleado;
+import com.ibm.academia.universidadrest.services.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Component
 public class Comandos implements CommandLineRunner {
     @Autowired
-    private CarreraDao carreraDao;
+    private EmpleadoDAO empleadoDAO;
     @Autowired
-    private AlumnoDAO alumnoDAO;
+    private AulaDAO aulaDAO;
+    @Autowired
+    private PabellonDAO pabellonDAO;
+    @Autowired
+    private CarreraDao carreraDao;
 
     @Override
     public void run(String... args) throws Exception {
-        //Carrera contabilidad = new Carrera(null, "Contabilidad", 30, 3);
-        //Carrera contabilidad = new Carrera(null, "Matematicas", 60, 4);
-        //System.out.println(carreraDao.guardar(contabilidad).toString());
 
-        /*Direccion direccion = new Direccion("Andador de la brisa", "29", "54943", "DEPTO1", "PISO 2", "Ciudad de México");
-        Persona alumno = new Alumno(null, "Marcos", "Arreguin", "DNI", direccion);
-        Persona personaGuardada = alumnoDAO.guardar(alumno);
-        System.out.println(personaGuardada.toString());*/
+        /*Persona empleado = new Empleado(null, "Jorge", "Arreguin", "DNI2", new Direccion("calle 1", "1", "54943", "depto 1", "piso 2", "Ciudad de México"), new BigDecimal(25000), TipoEmpleado.ADMINISTRATIVO);
+        System.out.println(empleadoDAO.guardar(empleado).toString());*/
 
-        System.out.println(carreraDao.buscarPorId(3).toString());
+        /* Aula aula1 = new Aula(null, 1, "10x15", 50, Pizarron.PIZARRA_BLANCA);
+        System.out.println(aulaDAO.guardar(aula1).toString()); */
 
-        /*List<Persona> listaPersonas = (List<Persona>) alumnoDAO.buscarTodos();
-        listaPersonas.forEach(System.out::println);*/
+        /*Pabellon pabellon1 = new Pabellon(null, 75.0, "Pabellon 2", new Direccion("calle 1", "numero 1", "12345", "depto 2", "piso 2", "Ciudad de Mexico"));
+        System.out.println(pabellonDAO.guardar(pabellon1).toString());*/
+
+        //Profesor profesor1 = new Profesor(null, "Marcos", "Arreguin", "DNI1", new Direccion("calle 1", "1", "54943", "depto 1", "piso 2", "Ciudad de México"), new BigDecimal(25000));
+        //System.out.println(profesorDAO.guardar(profesor1).toString());
     }
 }

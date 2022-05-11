@@ -1,5 +1,6 @@
 package com.ibm.academia.universidadrest.services;
 
+import com.ibm.academia.universidadrest.entities.Persona;
 import com.ibm.academia.universidadrest.entities.Profesor;
 import com.ibm.academia.universidadrest.repositories.PersonaRepository;
 import com.ibm.academia.universidadrest.repositories.ProfesorRepository;
@@ -12,5 +13,10 @@ public class ProfesorDAOImpl extends PersonaDAOImpl implements ProfesorDAO {
     @Autowired
     public ProfesorDAOImpl(@Qualifier("repositorioProfesores") PersonaRepository repository) {
         super(repository);
+    }
+
+    @Override
+    public Iterable<Persona> buscaProfesoresPorCarrera(String carrera) {
+        return ((ProfesorDAO)repository).buscaProfesoresPorCarrera(carrera);
     }
 }

@@ -1,9 +1,6 @@
 package com.ibm.academia.universidadrest.entities;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -14,6 +11,7 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
+@ToString
 @Entity
 //@Table(name = "pabellones", schema = "universidad")
 @Table(name = "pabellones")

@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PabellonDAOImpl extends GenericoDAOImpl<Pabellon, PabellonRepository>{
+public class PabellonDAOImpl extends GenericoDAOImpl<Pabellon, PabellonRepository> implements PabellonDAO{
     @Autowired
     public PabellonDAOImpl(PabellonRepository repository) {
         super(repository);
