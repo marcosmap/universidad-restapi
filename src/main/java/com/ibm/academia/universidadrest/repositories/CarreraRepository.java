@@ -1,6 +1,7 @@
 package com.ibm.academia.universidadrest.repositories;
 
 import com.ibm.academia.universidadrest.entities.Carrera;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -19,4 +20,7 @@ public interface CarreraRepository extends CrudRepository<Carrera, Integer> {
 
     // @Query("select c from Carrera c where c.cantidadAnios > ?1")
     public Iterable<Carrera> findCarrerasByCantidadAniosAfter(Integer cantidadAnios);
+
+    @Query("select c from Carrera c where c.profesor.nombre = ?1 and c.profesor.apellido = ?2")
+    Iterable<Carrera> buscarCarrerasPorProfesorNombreYApellido(String nombre, String apellido);
 }
