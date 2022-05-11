@@ -2,10 +2,11 @@ package com.ibm.academia.universidadrest.repositories;
 
 import com.ibm.academia.universidadrest.entities.Aula;
 import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface AulaRepository {
+public interface AulaRepository extends CrudRepository<Aula, Integer> {
 
     @Query("select a from Aula a where a.tipoPizarron = ?1")
     public Iterable<Aula> buscarAulasPorTipoPizarron(String tipoPizarron);
