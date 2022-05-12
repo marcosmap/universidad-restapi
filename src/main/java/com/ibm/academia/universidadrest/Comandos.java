@@ -9,7 +9,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Component
 public class Comandos implements CommandLineRunner {
@@ -38,5 +40,23 @@ public class Comandos implements CommandLineRunner {
 
         /* Profesor profesor1 = new Profesor(null, "Marcos", "Arreguin", "DNI1", new Direccion("calle 1", "1", "54943", "depto 1", "piso 2", "Ciudad de México"), new BigDecimal(25000));
         System.out.println(profesorDAO.guardar(profesor1).toString()); */
+
+        /* Profesor profesor1 = new Profesor(null, "Martha", "Perez", "DNI6", new Direccion("brisa", "29", "54943", "depto 7", "piso 4", "Ciudad Labor"), new BigDecimal(12000));
+        Set<Carrera> carreras =  new HashSet<>();
+        carreras.add(carreraDao.buscarPorId(6).get());
+        profesor1.setCarreras(carreras);
+        System.out.println(profesorDAO.guardar(profesor1).toString()); */
+
+        /* Carrera carrera1 = new Carrera(null, "Programacion I", 48, 4);
+        Set<Profesor> profesores = new HashSet<>();
+        profesores.add(profesor1);
+        carrera1.setProfesores(profesores);
+        System.out.println(carreraDao.guardar(carrera1).toString()); */
+
+        System.out.println();
+        System.out.println("realiza busqueda...");
+        System.out.println();
+        profesorDAO.buscaProfesoresPorCarrera("Matematicas").forEach(System.out::println);
+        //profesorDAO.buscarTodos().forEach(System.out::println);
     }
 }

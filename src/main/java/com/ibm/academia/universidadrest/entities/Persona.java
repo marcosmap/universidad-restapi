@@ -21,7 +21,7 @@ public abstract class Persona implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    // @Column(name = "persona_id")
+    @Column(nullable = false, unique = true, name = "id")
     private Integer id;
 
     @Column(name = "nombre", nullable = false, length = 60)
