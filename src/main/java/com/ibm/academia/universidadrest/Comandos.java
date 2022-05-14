@@ -56,7 +56,7 @@ public class Comandos implements CommandLineRunner {
         System.out.println();
         System.out.println("realiza busqueda...");
         System.out.println();
-        profesorDAO.buscaProfesoresPorCarrera("Matematicas").forEach(System.out::println);
+        profesorDAO.findProfesoresByCarrera("Matematicas").forEach(System.out::println);
         //profesorDAO.buscarTodos().forEach(System.out::println);
     }
 }
