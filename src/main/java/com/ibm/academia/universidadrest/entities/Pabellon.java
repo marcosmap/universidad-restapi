@@ -11,7 +11,6 @@ import java.util.Set;
 @Getter
 @Setter
 @NoArgsConstructor
-@ToString
 @Entity
 //@Table(name = "pabellones", schema = "universidad")
 @Table(name = "pabellones")
@@ -66,6 +65,16 @@ public class Pabellon implements Serializable {
         if (o == null || getClass() != o.getClass()) return false;
         Pabellon pabellon = (Pabellon) o;
         return id.equals(pabellon.id) && nombre.equals(pabellon.nombre);
+    }
+
+    @Override
+    public String toString() {
+        return "Pabellon{" +
+                "id=" + id +
+                ", metrosCuadrados=" + metrosCuadrados +
+                ", nombre='" + nombre + '\'' +
+                ", direccion=" + direccion +
+                '}';
     }
 
     @Override

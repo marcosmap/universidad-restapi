@@ -8,11 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.math.BigDecimal;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-
 @Component
 public class Comandos implements CommandLineRunner {
     @Autowired
@@ -32,10 +27,11 @@ public class Comandos implements CommandLineRunner {
         System.out.println("realiza busqueda...");
         System.out.println();
 
-        aulaDAO.findByPizarron(Pizarron.PIZARRA_BLANCA).forEach(System.out::println);
-        // aulaDAO.findAulasByPabellonNombreContains("Pabellon 2").forEach(System.out::println);
-        // System.out.println(aulaDAO.findByNumeroAula(1).toString());
+        /* aulaDAO.findByPizarron(Pizarron.PIZARRA_BLANCA).forEach(System.out::println);
+        aulaDAO.findAulasByPabellonNombre("Pabellon 2").forEach(System.out::println);
+        System.out.println(aulaDAO.findByNumeroAula(1).toString());*/
 
         // pabellonDAO.findPabellonesByDireccionLocalidad("Ciudad de Mexico").forEach(System.out::println);
+        // System.out.println(pabellonDAO.findPabellonesByNombreContains("Pabellon").toString());
     }
 }

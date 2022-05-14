@@ -1,6 +1,7 @@
 package com.ibm.academia.universidadrest.entities;
 
 import com.ibm.academia.universidadrest.enums.Pizarron;
+
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,7 +15,6 @@ import java.util.Objects;
 @Setter
 @Getter
 @NoArgsConstructor
-@ToString
 @Entity
 //@Table(name = "aulas", schema = "universidad")
 @Table(name = "aulas")
@@ -43,7 +43,7 @@ public class Aula implements Serializable {
     @Column(name = "fecha_modificacion", nullable = true)
     private Date fechaModificacion;
 
-    @ManyToOne(optional = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToOne(optional = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
     @JoinColumn(name = "pabellon_id", foreignKey = @ForeignKey(name = "FK_PABELLON_ID"))
     private Pabellon pabellon;
 
@@ -53,6 +53,17 @@ public class Aula implements Serializable {
         this.medidas = medidas;
         this.cantidadPupitres = cantidadPupitres;
         this.pizarron = pizarron;
+    }
+
+    @Override
+    public String toString() {
+        return "Aula{" +
+                "id=" + id +
+                ", numeroAula=" + numeroAula +
+                ", medidas='" + medidas + '\'' +
+                ", cantidadPupitres=" + cantidadPupitres +
+                ", pizarron=" + pizarron +
+                '}';
     }
 
     @Override

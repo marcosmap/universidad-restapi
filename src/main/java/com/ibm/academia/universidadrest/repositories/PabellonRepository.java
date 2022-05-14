@@ -14,7 +14,8 @@ public interface PabellonRepository extends CrudRepository<Pabellon, Integer> {
     public Iterable<Pabellon> findPabellonesByDireccionLocalidad(String localidad);
 
     // @Query("select p from Pabellon p where p.nombre = ?1")
-    @Query(value = "select * from public.pabellones where nombre = '?1';", nativeQuery = true)
-    public Iterable<Pabellon> buscaPabellonesPorNombre(String nombre);
+    /*@Query(value = "select * from public.pabellones where nombre = '?1';", nativeQuery = true)
+    public Iterable<Pabellon> buscaPabellonesPorNombre(String nombre);*/
+    public Iterable<Pabellon> findPabellonesByNombreContains(String nombrePabellon);
 
 }
