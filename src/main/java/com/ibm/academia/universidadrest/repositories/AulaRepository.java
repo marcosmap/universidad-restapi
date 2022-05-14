@@ -1,6 +1,8 @@
 package com.ibm.academia.universidadrest.repositories;
 
 import com.ibm.academia.universidadrest.entities.Aula;
+import com.ibm.academia.universidadrest.entities.Carrera;
+import com.ibm.academia.universidadrest.enums.Pizarron;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -9,13 +11,12 @@ import org.springframework.stereotype.Repository;
 public interface AulaRepository extends CrudRepository<Aula, Integer> {
 
     //@Query("select a from Aula a where a.tipoPizarron = ?1")
-    @Query(value = "select * from public.aulas where tipo_pizarron = '?1'", nativeQuery = true)
-    public Iterable<Aula> buscarAulasPorTipoPizarron(String tipoPizarron);
+    public Iterable<Aula> findByPizarron(Pizarron tipoPizarron);
 
-    @Query("select a from Aula a join fetch a.pabellon p where p.nombre = ?1")
-    public Iterable<Aula> buscarAulasPorNombrePabellon(String nombrePabellon);
+    // @Query("select a from Aula a join fetch a.pabellon p where p.nombre = ?1")
+    public Iterable<Aula> findAulasByPabellonNombreContains(String nombrePabellon);
 
-    @Query("select a from Aula a where a.numeroAula = ?1")
-    public Aula buscaAulaPorNumero(Integer numeroAula);
+    // @Query("select a from Aula a where a.numeroAula = ?1")
+    public Aula findByNumeroAula(Integer numeroAula);
 
 }

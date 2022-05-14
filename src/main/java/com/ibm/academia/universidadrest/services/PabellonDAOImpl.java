@@ -12,4 +12,9 @@ public class PabellonDAOImpl extends GenericoDAOImpl<Pabellon, PabellonRepositor
     public PabellonDAOImpl(PabellonRepository repository) {
         super(repository);
     }
+
+    @Override
+    public Iterable<Pabellon> findPabellonesByDireccionLocalidad(String localidad) {
+        return ((PabellonRepository)repository).findPabellonesByDireccionLocalidad(localidad);
+    }
 }
