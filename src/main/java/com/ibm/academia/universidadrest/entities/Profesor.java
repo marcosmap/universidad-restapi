@@ -12,8 +12,7 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor
 @Entity
-//@Table(name = "profesores", schema = "universidad")
-@Table(name = "profesores")
+@Table(name = "profesores", schema = "universidad")
 @PrimaryKeyJoinColumn(name = "persona_id")
 public class Profesor extends Persona {
 
@@ -22,7 +21,7 @@ public class Profesor extends Persona {
 
     @ManyToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JoinTable(
-            name = "profesor_carrera", schema = "public",      // nombre de la tabla y schema al que pertenece
+            name = "profesor_carrera", schema = "universidad",      // nombre de la tabla y schema al que pertenece
             joinColumns = @JoinColumn(name = "profesor_id"),        // columna principal de la tabla
             inverseJoinColumns = @JoinColumn(name = "carrera_id")   // con quien se va a crear la relacion
     )

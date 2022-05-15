@@ -15,7 +15,7 @@ import java.util.Objects;
 @NoArgsConstructor
 @ToString
 @Entity
-@Table(name = "personas")
+@Table(name = "personas", schema = "universidad")
 @Inheritance(strategy = InheritanceType.JOINED)
 public abstract class Persona implements Serializable {
 

@@ -12,8 +12,7 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @Entity
-//@Table(name = "pabellones", schema = "universidad")
-@Table(name = "pabellones")
+@Table(name = "pabellones", schema = "universidad")
 public class Pabellon implements Serializable {
 
     @Id

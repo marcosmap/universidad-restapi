@@ -20,6 +20,8 @@ public class Comandos implements CommandLineRunner {
     private CarreraDao carreraDao;
     @Autowired
     private ProfesorDAO profesorDAO;
+    @Autowired
+    private AlumnoDAO alumnoDAO;
 
     @Override
     public void run(String... args) throws Exception {
@@ -27,11 +29,11 @@ public class Comandos implements CommandLineRunner {
         System.out.println("realiza busqueda...");
         System.out.println();
 
-        /* aulaDAO.findByPizarron(Pizarron.PIZARRA_BLANCA).forEach(System.out::println);
-        aulaDAO.findAulasByPabellonNombre("Pabellon 2").forEach(System.out::println);
-        System.out.println(aulaDAO.findByNumeroAula(1).toString());*/
+         /* carreraDao.guardar(new Carrera(null, "Ingeniería en Computación", 48, 4));
+        carreraDao.guardar(new Carrera(null, "Contabilidad", 36, 3));
+        carreraDao.guardar(new Carrera(null, "Qímico Farmacobiólogo", 60, 5));
+        carreraDao.guardar(new Carrera(null, "Actuaría", 55, 4));
+        carreraDao.guardar(new Carrera(null, "Medicina", 62, 5)); */
 
-        // pabellonDAO.findPabellonesByDireccionLocalidad("Ciudad de Mexico").forEach(System.out::println);
-        // System.out.println(pabellonDAO.findPabellonesByNombreContains("Pabellon").toString());
     }
 }

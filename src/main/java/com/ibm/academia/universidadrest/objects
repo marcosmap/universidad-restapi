@@ -40,11 +40,17 @@
           carrera1.setProfesores(profesores);
           System.out.println(carreraDao.guardar(carrera1).toString()); */
 
+          // carreraDao.buscarCarrerasPorProfesorNombreYApellido("Marcos", "Arreguin").forEach(System.out::println);
+
+          // empleadoDAO.findEmpleadoByTipoEmpleado(TipoEmpleado.ADMINISTRATIVO).forEach(System.out::println);
+
+          //profesorDAO.findProfesoresByCarrera("Matematicas").forEach(System.out::println);
+          //profesorDAO.buscarTodos().forEach(System.out::println);
 
 
-                  // carreraDao.buscarCarrerasPorProfesorNombreYApellido("Marcos", "Arreguin").forEach(System.out::println);
+           /* aulaDAO.findByPizarron(Pizarron.PIZARRA_BLANCA).forEach(System.out::println);
+           aulaDAO.findAulasByPabellonNombre("Pabellon 2").forEach(System.out::println);
+           System.out.println(aulaDAO.findByNumeroAula(1).toString());*/
 
-                  // empleadoDAO.findEmpleadoByTipoEmpleado(TipoEmpleado.ADMINISTRATIVO).forEach(System.out::println);
-
-                  //profesorDAO.findProfesoresByCarrera("Matematicas").forEach(System.out::println);
-                  //profesorDAO.buscarTodos().forEach(System.out::println);
+           // pabellonDAO.findPabellonesByDireccionLocalidad("Ciudad de Mexico").forEach(System.out::println);
+           // System.out.println(pabellonDAO.findPabellonesByNombreContains("Pabellon").toString());

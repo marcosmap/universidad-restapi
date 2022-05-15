@@ -5,7 +5,6 @@ import com.ibm.academia.universidadrest.enums.Pizarron;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lombok.ToString;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -16,8 +15,7 @@ import java.util.Objects;
 @Getter
 @NoArgsConstructor
 @Entity
-//@Table(name = "aulas", schema = "universidad")
-@Table(name = "aulas")
+@Table(name = "aulas", schema = "universidad")
 public class Aula implements Serializable {
 
     @Id
