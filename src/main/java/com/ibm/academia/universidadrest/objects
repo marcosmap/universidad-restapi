@@ -54,3 +54,10 @@
 
            // pabellonDAO.findPabellonesByDireccionLocalidad("Ciudad de Mexico").forEach(System.out::println);
            // System.out.println(pabellonDAO.findPabellonesByNombreContains("Pabellon").toString());
+
+
+           /* if (carrera.getCantidadAnios() <= 0)
+               throw  new BadRequestException("El campo cantidadAnios debe ser mayor a cero");
+
+           if (carrera.getCantidadMaterias() <= 0)
+               throw  new BadRequestException("El campo cantidadMaterias debe ser mayor a cero"); */

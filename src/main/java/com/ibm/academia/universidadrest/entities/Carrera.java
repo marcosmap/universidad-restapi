@@ -6,6 +6,10 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Positive;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
@@ -22,12 +26,17 @@ public class Carrera implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
+    @NotNull(message = "No puede ser nulo")
+    @NotEmpty(message = "No puede ser vacío")
+    @Size(min = 5, max = 80)
     @Column(name = "nombre", nullable = false, unique = true, length = 80)
     private String nombre;
 
+    @Positive(message = "Debe ser mayor a cero")
     @Column(name = "cantidad_materias")
     private Integer cantidadMaterias;
 
+    @Positive(message = "Debe ser mayor a cero")
     @Column(name = "cantidad_anios")
     private Integer cantidadAnios;
 
