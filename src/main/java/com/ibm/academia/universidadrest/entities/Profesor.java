@@ -1,5 +1,6 @@
 package com.ibm.academia.universidadrest.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,6 +26,7 @@ public class Profesor extends Persona {
             joinColumns = @JoinColumn(name = "profesor_id"),        // columna principal de la tabla
             inverseJoinColumns = @JoinColumn(name = "carrera_id")   // con quien se va a crear la relacion
     )
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "profesores"})
     private Set<Carrera> carreras;
 
     public Profesor(Integer id, String nombre, String apellido, String dni, Direccion direccion, BigDecimal sueldo) {
