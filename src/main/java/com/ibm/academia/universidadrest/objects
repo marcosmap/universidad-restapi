@@ -61,3 +61,10 @@
 
            if (carrera.getCantidadMaterias() <= 0)
                throw  new BadRequestException("El campo cantidadMaterias debe ser mayor a cero"); */
+
+
+               /* carreraDao.guardar(new Carrera(null, "Ingeniería en Computación", 48, 4));
+                       carreraDao.guardar(new Carrera(null, "Contabilidad", 36, 3));
+                       carreraDao.guardar(new Carrera(null, "Qímico Farmacobiólogo", 60, 5));
+                       carreraDao.guardar(new Carrera(null, "Actuaría", 55, 4));
+                       carreraDao.guardar(new Carrera(null, "Medicina", 62, 5)); */

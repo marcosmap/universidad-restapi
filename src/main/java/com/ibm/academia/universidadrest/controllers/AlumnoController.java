@@ -1,6 +1,5 @@
 package com.ibm.academia.universidadrest.controllers;
 
-import com.ibm.academia.universidadrest.entities.Alumno;
 import com.ibm.academia.universidadrest.entities.Carrera;
 import com.ibm.academia.universidadrest.entities.Persona;
 import com.ibm.academia.universidadrest.exceptions.NotFoundException;
@@ -96,6 +95,12 @@ public class AlumnoController {
         return new ResponseEntity<Map<String, Object>>(respuesta, HttpStatus.ACCEPTED);
     }
 
+    /**
+     *
+     * @param alumnoId
+     * @param carreraId
+     * @return
+     */
     @PutMapping("/alumnoId/{alumnoId}/carreraId/{carreraId}")
     public ResponseEntity<?> asignarCarreraAlumno(@PathVariable Integer alumnoId, @PathVariable Integer carreraId) {
         Optional<Persona> alumno = alumnoDAO.buscarPorId(alumnoId);

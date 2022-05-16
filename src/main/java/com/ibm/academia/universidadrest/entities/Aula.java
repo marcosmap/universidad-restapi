@@ -1,5 +1,6 @@
 package com.ibm.academia.universidadrest.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.ibm.academia.universidadrest.enums.Pizarron;
 
 import lombok.Getter;
@@ -43,6 +44,7 @@ public class Aula implements Serializable {
 
     @ManyToOne(optional = true, cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
     @JoinColumn(name = "pabellon_id", foreignKey = @ForeignKey(name = "FK_PABELLON_ID"))
+    @JsonIgnoreProperties({"hibernateLazyInitializer", "aulas"})
     private Pabellon pabellon;
 
     public Aula(Integer id, Integer numeroAula, String medidas, Integer cantidadPupitres, Pizarron pizarron) {
